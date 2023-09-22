@@ -25,17 +25,15 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: "Task Upload",
-          theme: ThemeData(
-            primaryColor: Colors.black,
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-          ),
-          // home: (token != null && JwtDecoder.isExpired(token) == false)
-          //     ? Dashboard(token: token)
-          //     : LoginScreen());
-          home: LoginScreen(),
-        );
+            debugShowCheckedModeBanner: false,
+            title: "Task Upload",
+            theme: ThemeData(
+              primaryColor: Colors.black,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
+            home: (token != null && JwtDecoder.isExpired(token) == false)
+                ? Dashboard(token: token)
+                : LoginScreen());
       },
     );
   }
